@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Agustina";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/Agustina.woff2") format("woff2"), url("./fonts/Agustina.woff") format("woff");
+  }
+  @font-face {
+    font-family: "GoogleSans";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/GoogleSans-Regular.ttf");
+  }
+}
+
+/* Set the default font for the body */
+body {
+  font-family: "GoogleSans", sans-serif;
+  background: #fbfbfe;
+}
