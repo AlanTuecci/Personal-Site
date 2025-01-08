@@ -4,23 +4,38 @@ import { LuMenu, LuX } from "react-icons/lu";
 
 const NavLinks = () => {
   return (
-    <>
-      <NavLink to="/" className="md:text-2xl text-xl py-4 px-2 xl-px-4 mx-auto hover:bg-indigo-100 hover:rounded-lg transition-all">
-        Home
-      </NavLink>
-      <NavLink to="/" className="md:text-2xl text-xl py-4 px-2 xl-px-4 mx-auto hover:bg-indigo-100 hover:rounded-lg transition-all">
-        Projects
-      </NavLink>
-      <NavLink to="/" className="md:text-2xl text-xl py-4 px-2 xl-px-4 mx-auto hover:bg-indigo-100 hover:rounded-lg transition-all">
-        Learn
-      </NavLink>
-      <NavLink to="/" className="md:text-2xl text-xl py-4 px-2 xl-px-4 mx-auto hover:bg-indigo-100 hover:rounded-lg transition-all">
-        Experience
-      </NavLink>
-      <NavLink to="/" className="md:text-2xl text-xl py-4 px-2 xl-px-4 mx-auto hover:bg-indigo-100 hover:rounded-lg transition-all">
-        Contact Me
-      </NavLink>
-    </>
+    <ul className="lg:flex 2xl:space-x-6 lg:space-y-0 space-y-4 text-center lg:text-xl text-xl py-4">
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Projects
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Learn
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Education
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Experience
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" className="hover:bg-indigo-100 hover:rounded-lg transition-all lg:mx-2">
+          Contact Me
+        </NavLink>
+      </li>
+    </ul>
   );
 };
 
@@ -34,8 +49,8 @@ const Nav = () => {
   return (
     <>
       {/* Tablets/Computers */}
-      <nav className="xl:w-[50%] lg:w-[60%] flex justify-end">
-        <div className="hidden w-full justify-evenly lg:flex">
+      <nav className="flex justify-end">
+        <div className="hidden lg:flex lg:justify-end w-full">
           <NavLinks />
         </div>
         <div className="lg:hidden">
