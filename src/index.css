@@ -15,6 +15,12 @@
     font-weight: normal;
     src: url("./fonts/GoogleSans-Regular.ttf");
   }
+  @font-face {
+    font-family: "GoogleSansBold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/GoogleSans-Bold.ttf");
+  }
 }
 
 /* Set the default font for the body */

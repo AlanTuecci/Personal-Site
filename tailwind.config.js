@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         agustina: ['"Agustina"', "cursive"],
         sans: ["GoogleSans", "sans-serif"],
+        sansBold: ["GoogleSansBold", "sans-serif"],
       },
     },
   },
