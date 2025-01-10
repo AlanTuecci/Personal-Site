@@ -13,13 +13,19 @@
     font-family: "GoogleSans";
     font-style: normal;
     font-weight: normal;
-    src: url("./fonts/GoogleSans-Regular.ttf");
+    src: url("./fonts/GoogleSans-Regular.woff2") format("woff2"), url("./fonts/GoogleSans-Regular.woff") format("woff");
   }
   @font-face {
     font-family: "GoogleSansBold";
     font-style: normal;
     font-weight: normal;
-    src: url("./fonts/GoogleSans-Bold.ttf");
+    src: url("./fonts/GoogleSans-Bold.woff2") format("woff2"), url("./fonts/GoogleSans-Bold.woff") format("woff");
+  }
+  @font-face {
+    font-family: "GoogleSansMedium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/GoogleSans-Medium.woff2") format("woff2"), url("./fonts/GoogleSans-Medium.woff") format("woff");
   }
 }
 

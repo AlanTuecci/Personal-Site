@@ -7,6 +7,7 @@ export default {
         agustina: ['"Agustina"', "cursive"],
         sans: ["GoogleSans", "sans-serif"],
         sansBold: ["GoogleSansBold", "sans-serif"],
+        sansMedium: ["GoogleSansMedium", "sans-serif"]
       },
     },
   },
