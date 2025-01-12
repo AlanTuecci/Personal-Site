@@ -33,10 +33,10 @@ const Intro = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <NavLink to="https://github.com">
+            <NavLink to="https://github.com/AlanTuecci">
               <PiGithubLogoLight className="lg:text-5xl xl:text-6xl text-4xl" />
             </NavLink>
-            <NavLink to="https://www.linkedin.com/">
+            <NavLink to="https://www.linkedin.com/in/alan-tuecci/">
               <PiLinkedinLogoLight className="lg:text-5xl xl:text-6xl text-4xl" />
             </NavLink>
             <NavLink to="mailto:alan.tuecci@outlook.com">
