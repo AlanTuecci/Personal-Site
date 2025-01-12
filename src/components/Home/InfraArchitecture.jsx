@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { motion, useInView } from "framer-motion";
 import { SiCloudflare, SiNginx, SiPostgresql, SiCloudinary } from "react-icons/si";
 import { GrWindows } from "react-icons/gr";
-import SvgMaintenance from "../assets/SvgMaintenance";
+import SvgMaintenance from "../../assets/SvgMaintenance";
 
 const InfraArchitecture = () => {
   const ref1 = useRef(null);

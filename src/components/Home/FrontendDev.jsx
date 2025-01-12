@@ -11,7 +11,7 @@ import {
   SiVite,
   SiTailwindcss,
 } from "react-icons/si";
-import SvgProgressiveApp from "../assets/SvgProgressiveApp";
+import SvgProgressiveApp from "../../assets/SvgProgressiveApp";
 
 const FrontendDev = () => {
   const ref1 = useRef(null);

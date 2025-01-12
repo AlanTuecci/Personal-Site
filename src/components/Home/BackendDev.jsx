@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { NavLink } from "react-router";
 import { motion, useInView } from "framer-motion";
 import { SiJavascript, SiNodedotjs, SiNpm, SiExpress } from "react-icons/si";
-import SvgRealTimeAnalytics from "../assets/SvgRealTimeAnalytics";
+import SvgRealTimeAnalytics from "../../assets/SvgRealTimeAnalytics";
 
 const BackendDev = () => {
   const ref1 = useRef(null);

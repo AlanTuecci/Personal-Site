@@ -7,7 +7,7 @@ import {
   PiGithubLogoLight,
   PiGoogleLogoLight,
 } from "react-icons/pi";
-import SvgProgramming from "../assets/SvgProgramming.jsx";
+import SvgProgramming from "../../assets/SvgProgramming.jsx";
 
 const Intro = () => {
   return (

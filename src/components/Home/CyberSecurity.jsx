@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { motion, useInView } from "framer-motion";
 import { SiCloudflare, SiGithubactions } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
-import SvgSecurityOn from "../assets/SvgSecurityOn";
+import SvgSecurityOn from "../../assets/SvgSecurityOn";
 
 const CyberSecurity = () => {
   const ref1 = useRef(null);
