@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { useRef, Suspense, lazy } from "react";
 import Header from "../components/Header/Header.jsx";
 import { motion, useInView } from "framer-motion";
-import BackendDev from "../components/BackendDev.jsx";
-import FrontendDev from "../components/FrontendDev.jsx";
-import InfraArchitecture from "../components/InfraArchitecture.jsx";
-import CyberSecurity from "../components/CyberSecurity.jsx";
 import Intro from "../components/Intro.jsx";
+
+const BackendDev = lazy(() => import("../components/BackendDev.jsx"));
+const FrontendDev = lazy(() => import("../components/FrontendDev.jsx"));
+const InfraArchitecture = lazy(() => import("../components/InfraArchitecture.jsx"));
+const CyberSecurity = lazy(() => import("../components/CyberSecurity.jsx"));
 
 const Home = () => {
   const ref = useRef(null);
@@ -25,10 +26,18 @@ const Home = () => {
       >
         <h1 className="lg:text-5xl xl:text-6xl text-4xl font-[googleSansBold]">What I do</h1>
       </motion.div>
-      <BackendDev />
-      <FrontendDev />
-      <InfraArchitecture />
-      <CyberSecurity />
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading...</div>}>
+        <BackendDev />
+      </Suspense>
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading...</div>}>
+        <FrontendDev />
+      </Suspense>
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading...</div>}>
+        <InfraArchitecture />
+      </Suspense>
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading...</div>}>
+        <CyberSecurity />
+      </Suspense>
     </>
   );
 };
