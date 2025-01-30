@@ -12,7 +12,7 @@ const NavLinks = () => {
         <NavLink to="/404">Projects</NavLink>
       </li>
       <li className="lg:mx-2">
-        <NavLink to="/404">Learn</NavLink>
+        <NavLink to="/learn">Learn</NavLink>
       </li>
       <li className="lg:mx-2">
         <NavLink to="/404">Education</NavLink>
