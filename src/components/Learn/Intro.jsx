@@ -27,8 +27,8 @@ const Intro = () => {
             viewport={{ once: true }}
           >
             <h3 className="lg:text-xl xl:text-2xl text-lg font-[googleSans]">
-              This is my collection of notes and illustrations I made in Professor Shostak's Spring 2024 course.
-              The material may have changed since and the notes here may have errors.
+              This is my collection of notes and illustrations I made in Professor Shostak's Spring 2024 course. The
+              material may have since changed (leading to missing content) and the notes here may have errors.
             </h3>
           </motion.div>
         </motion.div>

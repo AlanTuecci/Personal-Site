@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgFileSystemTable from "../../assets/SvgFileSystemTable";
+import SvgLogicalDisks from "../../assets/SvgLogicalDisks";
 
-const LessonOnePart5 = () => {
+const LessonOnePart7 = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -15,36 +15,39 @@ const LessonOnePart5 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] xl:mt-20 mt-16 w-[80%] mx-auto lg:flex lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
-        <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
+      <div className="lg:w-[90%] w-[80%] mt-8 mx-auto lg:flex lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
+        <div className="lg:w-[50%] lg:pr-4 xl:pr-8 mb-8">
           <motion.div
-            className="mb-8"
+            className=""
             ref={ref2}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView2 ? 1 : 0, x: isInView2 ? 0 : -25 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="xl:text-3xl text-2xl font-[googleSansMedium] text-center">
-              4 - Managing Storage [File System and Disk Partitions]
-            </h2>
+            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+              When you get a new hard disk, you have to format it to prepare the disk to use a specific file system.
+              Formatting a disk resets the file system, but it does not overwrite the data. This means that the physical
+              data is inaccessible, but it is still technically present on the disk. In order to truly erase the data on
+              a hard disk, the data needs to be completely overwritten - something which is not done when formatting a
+              disk.
+            </p>
           </motion.div>
           <motion.div
-            className="flex justify-evenly my-8"
+            className="flex justify-evenly"
             ref={ref3}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView3 ? 1 : 0, x: isInView3 ? 0 : -25 }}
             transition={{ duration: 1, delay: isInView2 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="lg:text-2xl xl:text-3xl text-xl font-[googleSans] text-center">
-              The hard disk can only read and write. It does not know what is where or where is what. The OS is what
-              maps and decodes the contents of the disk. When programs want to read a file from the hard drive, it must
-              do it through the OS.
-            </h2>
+            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+              Computers can have 2 OSes installed but only 1 can run at a time. Additionally, these OSes must be
+              installed on different physical or logical disks.
+            </p>
           </motion.div>
           <motion.div
-            className="justify-around my-8"
+            className="justify-around"
             ref={ref4}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView4 ? 1 : 0, x: isInView4 ? 0 : -25 }}
@@ -52,20 +55,12 @@ const LessonOnePart5 = () => {
             viewport={{ once: true }}
           >
             <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              Operating Systems have file systems [ex: NTFS (Windows), APFS (Mac), FAT32 (Windows, Mac, Linux), EXT4
-              (Linux)].
-            </p>
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              Files are mapped to locations on the hard drive. Files that are stored in the HDD are stored in a system
-              that is a collection of data/information about all the files on the hard disk.
-            </p>
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              The file system pretty much contains the name/contents of the file and its location with its coordinates
-              on the disk.
+              Windows will only see disks C and E - not D. Linux will only see D and E - not C. This is because of the
+              file system compatiblilty with different operating systems.
             </p>
           </motion.div>
         </div>
-        <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
+        <div className="lg:w-[50%] lg:pl-4 xl:pl-8 mb-8">
           <motion.div
             className="flex justify-center"
             ref={ref1}
@@ -74,7 +69,7 @@ const LessonOnePart5 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <SvgFileSystemTable className="lg:w-[100%] w-[75%]" />
+            <SvgLogicalDisks className="lg:w-[100%] w-[75%]" />
           </motion.div>
         </div>
       </div>
@@ -82,4 +77,4 @@ const LessonOnePart5 = () => {
   );
 };
 
-export default LessonOnePart5;
+export default LessonOnePart7;
