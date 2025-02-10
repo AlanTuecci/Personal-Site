@@ -17,7 +17,7 @@ const LessonOnePart1 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] xl:my-20 my-16 w-[80%] mx-auto lg:flex lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
+      <div className="lg:w-[90%] my-12 w-[80%] mx-auto lg:flex lg:flex-wrap lg:items-start lg:justify-center">
         <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
           <motion.div
             className="mb-8"
@@ -32,7 +32,7 @@ const LessonOnePart1 = () => {
             </h1>
           </motion.div>
           <motion.div
-            className="flex justify-evenly my-8"
+            className="flex justify-evenly my-6"
             ref={ref3}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView3 ? 1 : 0, x: isInView3 ? 0 : -25 }}
@@ -45,7 +45,7 @@ const LessonOnePart1 = () => {
             </h2>
           </motion.div>
           <motion.div
-            className="justify-around my-8"
+            className="justify-around my-6"
             ref={ref4}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView4 ? 1 : 0, x: isInView4 ? 0 : -25 }}
@@ -54,22 +54,22 @@ const LessonOnePart1 = () => {
           >
             <h3 className="lg:text-2xl text-xl font-[googleSans]">These are some examples of operating systems:</h3>
             <ul className="pl-5 lg:text-2xl text-xl list-disc">
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>Laptop/Desktop: Windows, MacOS, Linux, ChromeOS</span>
               </li>
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>Servers/Mainframes: Windows Server, Unix</span>
               </li>
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>Embedded Systems: TyniOS, VxWorld</span>
               </li>
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>Mobile Devices: Android, iOS/iPadOS</span>
               </li>
             </ul>
           </motion.div>
           <motion.div
-            className="justify-around my-8"
+            className="justify-around mt-6"
             ref={ref5}
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: isInView5 ? 1 : 0, x: isInView5 ? 0 : 25 }}

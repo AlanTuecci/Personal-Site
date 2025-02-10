@@ -15,8 +15,8 @@ const LessonOnePart9 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] w-[80%] mt-8 mx-auto lg:flex lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
-        <div className="lg:w-[50%] lg:pr-4 xl:pr-8 mb-8">
+      <div className="lg:w-[90%] mt-4 w-[80%] mx-auto lg:flex lg:flex-wrap items-start justify-center">
+        <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
           <motion.div
             className=""
             ref={ref2}
@@ -25,7 +25,7 @@ const LessonOnePart9 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+            <p className="lg:text-2xl text-xl font-[googleSans] pb-2">
               There are thousands of devices with hundreds of devices being released every day. The OS has to know how
               to communicate with all of them. This is done through the use of device drivers. Drivers are small
               programs that act as an "interpreter" between an OS and a device.
@@ -60,7 +60,7 @@ const LessonOnePart9 = () => {
             </p>
           </motion.div>
         </div>
-        <div className="lg:w-[50%] lg:pl-4 xl:pl-8 mb-8">
+        <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
             className="flex justify-center"
             ref={ref1}

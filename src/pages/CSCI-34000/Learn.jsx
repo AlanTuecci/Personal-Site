@@ -13,6 +13,7 @@ const LessonOnePart7 = lazy(() => import("../../components/Learn/LessonOnePart7.
 const LessonOnePart8 = lazy(() => import("../../components/Learn/LessonOnePart8.jsx"));
 const LessonOnePart9 = lazy(() => import("../../components/Learn/LessonOnePart9.jsx"));
 const LessonOnePart10 = lazy(() => import("../../components/Learn/LessonOnePart10.jsx"));
+const LessonOnePart11 = lazy(() => import("../../components/Learn/LessonOnePart11.jsx"));
 
 const Learn = () => {
   return (
@@ -51,6 +52,9 @@ const Learn = () => {
       </Suspense>
       <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading Lesson One Part 10...</div>}>
         <LessonOnePart10 />
+      </Suspense>
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading Lesson One Part 11...</div>}>
+        <LessonOnePart11 />
       </Suspense>
     </>
   );

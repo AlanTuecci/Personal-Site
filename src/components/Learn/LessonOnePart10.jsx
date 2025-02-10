@@ -15,7 +15,7 @@ const LessonOnePart10 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] mt-8 w-[80%] mx-auto lg:flex lg:flex-row-reverse lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
+      <div className="lg:w-[90%] my-12 w-[80%] mx-auto lg:flex lg:flex-row-reverse lg:flex-wrap items-start justify-center">
         <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
             className="mb-8"
@@ -59,16 +59,16 @@ const LessonOnePart10 = () => {
           >
             <h3 className="lg:text-2xl text-xl text-center font-[googleSans]">Here are some examples:</h3>
             <ol className="ml-7 lg:text-2xl text-xl list-decimal">
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>Application: HTTP - Used to load/display webpages.</span>
               </li>
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>
                   Physical Network Link: 802.11 Wi-Fi - Used to specify the physical details of the connection such as
                   how the wires/signals are configured and used.
                 </span>
               </li>
-              <li className="mt-4">
+              <li className="mt-2">
                 <span>
                   Data Transmission: TCP/IP - Used to specify how packets/bits of information are sent between computers
                   over the internet.

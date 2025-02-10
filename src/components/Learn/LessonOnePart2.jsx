@@ -15,7 +15,7 @@ const LessonOnePart2 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%]  w-[80%] mx-auto lg:flex lg:flex-row-reverse lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
+      <div className="lg:w-[90%] my-12 w-[80%] mx-auto lg:flex lg:flex-row-reverse lg:flex-wrap items-start justify-center">
         <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
             className="mb-8"
@@ -30,7 +30,7 @@ const LessonOnePart2 = () => {
             </h1>
           </motion.div>
           <motion.div
-            className="flex justify-evenly my-8"
+            className="flex justify-evenly my-6"
             ref={ref3}
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: isInView3 ? 1 : 0, x: isInView3 ? 0 : 25 }}
@@ -42,7 +42,7 @@ const LessonOnePart2 = () => {
             </h2>
           </motion.div>
           <motion.div
-            className="justify-around my-4"
+            className="justify-around mt-6"
             ref={ref4}
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: isInView4 ? 1 : 0, x: isInView4 ? 0 : 25 }}

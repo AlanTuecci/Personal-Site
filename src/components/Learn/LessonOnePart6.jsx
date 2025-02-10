@@ -15,8 +15,8 @@ const LessonOnePart6 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] w-[80%] mt-8 mx-auto lg:flex lg:flex-row-reverse lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
-        <div className="lg:w-[50%] lg:pl-4 xl:pl-8 mb-8">
+      <div className="lg:w-[90%] w-[80%] mt-4 mx-auto lg:flex lg:flex-row-reverse lg:flex-wrap items-start justify-center">
+        <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
             className=""
             ref={ref2}
@@ -25,7 +25,7 @@ const LessonOnePart6 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+            <p className="lg:text-2xl text-xl font-[googleSans] pb-2">
               The knowledge of how to deal with the file system is built into the OS, but the actual file system is
               stored on the hard disk. If the file system is destroyed, the file data itself is not destroyed because
               the hard disk is not volatile and the file system only stores the coordinates of the file names and its

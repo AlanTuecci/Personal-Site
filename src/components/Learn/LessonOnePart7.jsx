@@ -15,8 +15,8 @@ const LessonOnePart7 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] w-[80%] mt-8 mx-auto lg:flex lg:space-y-0 space-y-10 lg:flex-wrap items-start justify-center">
-        <div className="lg:w-[50%] lg:pr-4 xl:pr-8 mb-8">
+      <div className="lg:w-[90%] w-[80%] mt-4 mx-auto lg:flex lg:flex-wrap items-start justify-center">
+        <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
           <motion.div
             className=""
             ref={ref2}
@@ -25,7 +25,7 @@ const LessonOnePart7 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+            <p className="lg:text-2xl text-xl font-[googleSans] pb-2">
               When you get a new hard disk, you have to format it to prepare the disk to use a specific file system.
               Formatting a disk resets the file system, but it does not overwrite the data. This means that the physical
               data is inaccessible, but it is still technically present on the disk. In order to truly erase the data on
@@ -60,7 +60,7 @@ const LessonOnePart7 = () => {
             </p>
           </motion.div>
         </div>
-        <div className="lg:w-[50%] lg:pl-4 xl:pl-8 mb-8">
+        <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
             className="flex justify-center"
             ref={ref1}
