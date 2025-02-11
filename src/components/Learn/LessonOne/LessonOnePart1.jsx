@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgAppOsHardware from "../../assets/SvgAppOsHardware";
+import SvgAppOsHardware from "../../../assets/SvgAppOsHardware";
 
 const LessonOnePart1 = () => {
   const ref1 = useRef(null);

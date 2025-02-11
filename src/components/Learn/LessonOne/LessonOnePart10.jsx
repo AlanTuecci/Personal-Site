@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgComputerNetworking from "../../assets/SvgComputerNetworking";
+import SvgComputerNetworking from "../../../assets/SvgComputerNetworking";
 
 const LessonOnePart10 = () => {
   const ref1 = useRef(null);

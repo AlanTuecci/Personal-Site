@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgUserKernelMode from "../../assets/SvgUserKernelMode";
+import SvgUserKernelMode from "../../../assets/SvgUserKernelMode";
 
 const LessonOnePart2 = () => {
   const ref1 = useRef(null);
@@ -50,6 +50,11 @@ const LessonOnePart2 = () => {
             viewport={{ once: true }}
           >
             <div className="lg:text-2xl text-xl font-[googleSans] py-2">
+              <p className="py-2">
+                The Kernel is a central component of the OS that performs the most important functions. Some OSes have a
+                monolithic kernel design, meaning that the kernel does <i>a lot</i>. Others have a microkernel design,
+                meaning the kernel performs a limited number of operations.
+              </p>
               <p className="py-2">
                 A system call (syscall) is a request from the application to the operating system to provide special
                 services (The user asks the OS to execute kernel instructions).

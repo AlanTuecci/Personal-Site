@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgDriverDeviceComms from "../../assets/SvgDriverDeviceComms";
+import SvgDriverDeviceComms from "../../../assets/SvgDriverDeviceComms";
 
 const LessonOnePart9 = () => {
   const ref1 = useRef(null);

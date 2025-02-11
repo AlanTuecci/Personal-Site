@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgFileAccess from "../../assets/SvgFileAccess";
+import SvgFileSystemTable from "../../../assets/SvgFileSystemTable";
 
-const LessonOnePart11 = () => {
+const LessonOnePart5 = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -15,7 +15,7 @@ const LessonOnePart11 = () => {
 
   return (
     <>
-      <div className="lg:w-[90%] my-12 w-[80%] mx-auto lg:flex lg:flex-wrap items-start justify-center">
+      <div className="lg:w-[90%] mt-12 w-[80%] mx-auto lg:flex lg:flex-wrap items-start justify-center">
         <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
           <motion.div
             className="mb-8"
@@ -25,20 +25,26 @@ const LessonOnePart11 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="xl:text-3xl text-2xl font-[googleSansMedium] text-center">7 - Security</h2>
+            <h2 className="xl:text-3xl text-2xl font-[googleSansMedium] text-center">
+              4 - Managing Storage [File System and Disk Partitions]
+            </h2>
           </motion.div>
           <motion.div
-            className=""
+            className="flex justify-evenly my-6"
             ref={ref3}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView3 ? 1 : 0, x: isInView3 ? 0 : -25 }}
             transition={{ duration: 1, delay: isInView2 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">This is more than just stopping hackers.</p>
+            <h2 className="lg:text-2xl xl:text-3xl text-xl font-[googleSans] text-center">
+              The hard disk can only read and write. It does not know what is where or where is what. The OS is what
+              maps and decodes the contents of the disk. When programs want to read a file from the hard drive, it must
+              do it through the OS.
+            </h2>
           </motion.div>
           <motion.div
-            className="justify-around mb-2"
+            className="justify-around mt-6"
             ref={ref4}
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: isInView4 ? 1 : 0, x: isInView4 ? 0 : -25 }}
@@ -46,13 +52,16 @@ const LessonOnePart11 = () => {
             viewport={{ once: true }}
           >
             <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              It involves preventing unauthorized access to files not owned by a user.
+              Operating Systems have file systems [ex: NTFS (Windows), APFS (Mac), FAT32 (Windows, Mac, Linux), EXT4
+              (Linux)].
             </p>
             <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              It also covers restricting what users and applications can do.
+              Files are mapped to locations on the hard drive. Files that are stored in the HDD are stored in a system
+              that is a collection of data/information about all the files on the hard disk.
             </p>
             <p className="lg:text-2xl text-xl font-[googleSans] py-2">
-              Sometimes, these rules can be overridden with a user's permission (like Administrator/Root mode).
+              The file system pretty much contains the name/contents of the file and its location with its coordinates
+              on the disk.
             </p>
           </motion.div>
         </div>
@@ -65,7 +74,7 @@ const LessonOnePart11 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <SvgFileAccess className="lg:w-[100%] w-[75%]" />
+            <SvgFileSystemTable className="lg:w-[100%] w-[75%]" />
           </motion.div>
         </div>
       </div>
@@ -73,4 +82,4 @@ const LessonOnePart11 = () => {
   );
 };
 
-export default LessonOnePart11;
+export default LessonOnePart5;

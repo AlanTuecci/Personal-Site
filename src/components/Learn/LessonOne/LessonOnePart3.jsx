@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgProcessScheduling from "../../assets/SvgProcessScheduling";
+import SvgProcessScheduling from "../../../assets/SvgProcessScheduling";
 
 const LessonOnePart3 = () => {
   const ref1 = useRef(null);

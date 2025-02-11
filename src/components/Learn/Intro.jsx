@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 import SvgRealTimeSync from "../../assets/SvgRealTimeSync";
 
 const Intro = () => {
@@ -20,7 +21,7 @@ const Intro = () => {
             implementation are explored.
           </h3>
           <motion.div
-            className="flex xl:space-x-6 lg:space-x-4 space-x-2 my-8"
+            className="xl:space-x-6 lg:space-x-4 space-x-2 my-8"
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -30,6 +31,17 @@ const Intro = () => {
               This is my collection of notes and illustrations I made in Professor Shostak's Spring 2024 course. The
               material may have since changed (leading to missing content) and the notes here may have errors.
             </h3>
+            <motion.div
+              className="flex justify-center my-16"
+              initial={{ opacity: 0, x: -25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <NavLink to="/learn/lessonOne" className="md:text-4xl text-2xl px-4 py-2 border-4 rounded-xl">
+                Go to Lesson One
+              </NavLink>
+            </motion.div>
           </motion.div>
         </motion.div>
         <motion.div
