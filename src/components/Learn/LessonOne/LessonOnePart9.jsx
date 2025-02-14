@@ -28,7 +28,7 @@ const LessonOnePart9 = () => {
             <p className="lg:text-2xl text-xl font-[googleSans] pb-2">
               There are thousands of devices with hundreds of devices being released every day. The OS has to know how
               to communicate with all of them. This is done through the use of device drivers. Drivers are small
-              programs that act as an "interpreter" between an OS and a device.
+              programs that act as an "interpreter" between an OS and a device that helps the OS control the device.
             </p>
           </motion.div>
           <motion.div
