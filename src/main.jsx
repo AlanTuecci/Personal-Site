@@ -7,12 +7,14 @@ import Learn from "./pages/CSCI-34000/Learn.jsx";
 import LessonOne from "./pages/CSCI-34000/LessonOne.jsx";
 import LessonTwo from "./pages/CSCI-34000/LessonTwo.jsx";
 import UnderConstruction from "./pages/UnderConstruction.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/learn" element={<Learn />} />

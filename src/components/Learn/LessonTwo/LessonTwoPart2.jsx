@@ -83,12 +83,15 @@ const LessonTwoPart2 = () => {
             transition={{ duration: 1, delay: isInView3 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans]">
+            <p className="lg:text-2xl text-xl font-[googleSans] my-2">
               A process cannot access its own PCB. The PCB is owned and managed by only the OS.
+            </p>
+            <p className="lg:text-2xl text-xl font-[googleSans] my-2">
+              The PCBs of all running programs are stored in a Process Table.
             </p>
           </motion.div>
         </div>
-        <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
+        <div className="lg:w-[50%] lg:pr-4 xl:pr-8 lg:my-0 mt-4">
           <motion.div
             className="flex justify-center border-black border-2"
             ref={ref1}

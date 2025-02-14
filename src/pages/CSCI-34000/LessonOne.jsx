@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import Header from "../../components/Header/Header.jsx";
 
 const SectionOne = lazy(() => import("../../components/Learn/LessonOne/SectionOne.jsx"));
+const SectionTwo = lazy(() => import("../../components/Learn/LessonOne/SectionTwo.jsx"));
 const LessonOnePart1 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart1.jsx"));
 const LessonOnePart2 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart2.jsx"));
 const LessonOnePart3 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart3.jsx"));
@@ -15,6 +16,7 @@ const LessonOnePart10 = lazy(() => import("../../components/Learn/LessonOne/Less
 const LessonOnePart11 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart11.jsx"));
 const LessonOnePart12 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart12.jsx"));
 const LessonOnePart13 = lazy(() => import("../../components/Learn/LessonOne/LessonOnePart13.jsx"));
+
 
 const LessonOne = () => {
   return (
@@ -61,6 +63,9 @@ const LessonOne = () => {
       </Suspense>
       <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading Lesson One Part 13...</div>}>
         <LessonOnePart13 />
+      </Suspense>
+      <Suspense fallback={<div className="text-center lg:text-2xl text-xl">Loading Section Two...</div>}>
+        <SectionTwo />
       </Suspense>
     </>
   );
