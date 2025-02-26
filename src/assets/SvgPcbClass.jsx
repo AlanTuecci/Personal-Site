@@ -61,9 +61,11 @@ const SvgPcbClass = () => {
           int register2,
         </text>
         <text fontFamily="GoogleSans" fontSize="80" transform="matrix(1 0 0 1 1288.15 2195)">
-          // Some more for the rest of the registers
+          // Some more members for the rest of the PCB 
         </text>
-        <text fontFamily="GoogleSans" fontSize="80" transform="matrix(1 0 0 1 1122 2294)">{"};"}</text>
+        <text fontFamily="GoogleSans" fontSize="80" transform="matrix(1 0 0 1 1122 2294)">
+          {"};"}
+        </text>
       </g>
     </svg>
   );

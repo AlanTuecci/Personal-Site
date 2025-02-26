@@ -43,6 +43,17 @@ const LessonTwoPart2 = () => {
             </p>
             <ul className="pl-5 lg:text-2xl text-xl list-disc">
               <li className="mt-2">
+                <span>
+                  Process ID - This is a unique identifier number (typically an integer) assigned to a process.
+                </span>
+              </li>
+              <li className="mt-2">
+                <span>
+                  Parent Process ID - Some processes are created by other processes, and must be tracked as parent
+                  processes can make multiple child processes.
+                </span>
+              </li>
+              <li className="mt-2">
                 <span>Process State - The state may be new, ready, running, waiting, or terminated.</span>
               </li>
               <li className="mt-2">
