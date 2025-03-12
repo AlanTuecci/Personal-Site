@@ -1,17 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import SvgSimpleFork from "../../../assets/SvgSimpleFork";
+import SvgRamProcessesIndependence from "../../../assets/SvgRamProcessesIndependence";
 
-const LessonThreePart1 = () => {
+const LessonFourPart6 = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
-  const ref4 = useRef(null);
 
   const isInView1 = useInView(ref1, { once: true });
   const isInView2 = useInView(ref2, { once: true });
   const isInView3 = useInView(ref3, { once: true });
-  const isInView4 = useInView(ref4, { once: true });
 
   return (
     <>
@@ -25,7 +23,10 @@ const LessonThreePart1 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="xl:text-3xl text-2xl font-[googleSansMedium] text-center">The fork() Operation</h2>
+            <p className="lg:text-2xl text-xl font-[googleSans]">
+              Thanks to OS virtual memory techniques (more on this later), each process has its own stack, heap, data,
+              and text sections.
+            </p>
           </motion.div>
           <motion.div
             className="flex justify-evenly my-4"
@@ -35,37 +36,22 @@ const LessonThreePart1 = () => {
             transition={{ duration: 1, delay: isInView2 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans]">
-              An operation used to create another instance (process) of an existing process. This new process is called
-              a "child" process and the original process is called a "parent" process. After fork() is called, both
-              processes continue execution independently.
-            </p>
-          </motion.div>
-          <motion.div
-            className="justify-around my-4"
-            ref={ref4}
-            initial={{ opacity: 0, x: -25 }}
-            animate={{ opacity: isInView4 ? 1 : 0, x: isInView4 ? 0 : -25 }}
-            transition={{ duration: 1, delay: isInView3 ? 0.2 : 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="lg:text-2xl text-xl font-[googleSans]">
-              fork() also returns a value. This value is different between parent and child. fork() will return 0 to the
-              child process, but parent processes will receive a value which is equal to the PID of the child process.
-              In other words, fork() will always return a value greater than 0 to the parent process.
+            <p className="my-2 lg:text-2xl text-xl font-[googleSans]">
+              Just keep in mind that things don't work like this in modern, complex OSes, but the basic idea remains the
+              same.
             </p>
           </motion.div>
         </div>
         <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
           <motion.div
-            className="flex justify-center"
+            className="flex"
             ref={ref1}
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: isInView1 ? 1 : 0, x: isInView1 ? 0 : 25 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <SvgSimpleFork className="lg:w-[100%] w-[75%]" />
+            <SvgRamProcessesIndependence className="lg:w-[100%] w-[75%]" />
           </motion.div>
         </div>
       </div>
@@ -73,4 +59,4 @@ const LessonThreePart1 = () => {
   );
 };
 
-export default LessonThreePart1;
+export default LessonFourPart6;

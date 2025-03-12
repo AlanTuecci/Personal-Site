@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import SvgProcessTreeExecution from "../../../assets/SvgProcessTreeExecution";
 
-const LessonTwoPart3 = () => {
+const LessonThreePart3 = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -76,4 +76,4 @@ const LessonTwoPart3 = () => {
   );
 };
 
-export default LessonTwoPart3;
+export default LessonThreePart3;

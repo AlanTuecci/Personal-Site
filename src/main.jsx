@@ -7,6 +7,7 @@ import Learn from "./pages/CSCI-34000/Learn.jsx";
 import LessonOne from "./pages/CSCI-34000/LessonOne.jsx";
 import LessonTwo from "./pages/CSCI-34000/LessonTwo.jsx";
 import LessonThree from "./pages/CSCI-34000/LessonThree.jsx";
+import LessonFour from "./pages/CSCI-34000/LessonFour.jsx";
 import UnderConstruction from "./pages/UnderConstruction.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
@@ -22,6 +23,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/learn/lessonOne" element={<LessonOne />} />
         <Route path="/learn/lessonTwo" element={<LessonTwo />} />
         <Route path="/learn/lessonThree" element={<LessonThree />} />
+        <Route path="/learn/lessonFour" element={<LessonFour />} />
         <Route path="/404" element={<UnderConstruction />} />
       </Routes>
     </BrowserRouter>
