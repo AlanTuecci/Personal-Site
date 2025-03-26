@@ -40,7 +40,7 @@ const LessonOnePart1 = () => {
             viewport={{ once: true }}
           >
             <h2 className="lg:text-2xl xl:text-3xl text-xl font-[googleSans] text-center">
-              An operating system is a program that manages hardware and provides other progams with an operating
+              An operating system is a program that manages hardware and provides other programs with an operating
               environment (an environment to run in).
             </h2>
           </motion.div>
