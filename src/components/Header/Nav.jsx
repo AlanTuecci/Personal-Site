@@ -9,7 +9,7 @@ const NavLinks = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="lg:mx-2">
-        <NavLink to="/404">Projects</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
       </li>
       <li className="lg:mx-2">
         <NavLink to="/learn">Learn</NavLink>
