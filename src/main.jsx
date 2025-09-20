@@ -11,9 +11,10 @@ import LessonFour from "./pages/CSCI-34000/LessonFour.jsx";
 import LessonFive from "./pages/CSCI-34000/LessonFive.jsx";
 import UnderConstruction from "./pages/UnderConstruction.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-import Projects from "./pages/Projects.jsx";
+// import Projects from "./pages/Projects.jsx";
 
 const Gallery = lazy(() => import("./pages/Gallery/Gallery.jsx"));
+const Projects = lazy(() => import("./pages/Projects.jsx"));
 
 const root = document.getElementById("root");
 
