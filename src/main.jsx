@@ -16,6 +16,8 @@ const Gallery = lazy(() => import("./pages/Gallery/Gallery.jsx"));
 const GalleryHome = lazy(() => import("./pages/Gallery/GalleryHome.jsx"));
 const Projects = lazy(() => import("./pages/Projects.jsx"));
 const SelectGallery = lazy(() => import("./pages/Gallery/SelectGallery.jsx"));
+const Experience = lazy(() => import("./pages/Experience.jsx"));
+const Education = lazy(() => import("./pages/Education.jsx"));
 
 const root = document.getElementById("root");
 
@@ -34,6 +36,8 @@ ReactDOM.createRoot(root).render(
           <Route index element={<Home />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/learn/lessonOne" element={<LessonOne />} />
           <Route path="/learn/lessonTwo" element={<LessonTwo />} />
           <Route path="/learn/lessonThree" element={<LessonThree />} />

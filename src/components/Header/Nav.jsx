@@ -15,13 +15,13 @@ const NavLinks = () => {
         <NavLink to="/learn">Learn</NavLink>
       </li>
       <li className="lg:mx-2">
-        <NavLink to="/404">Education</NavLink>
+        <NavLink to="/education">Education</NavLink>
       </li>
       <li className="lg:mx-2">
-        <NavLink to="/404">Experience</NavLink>
+        <NavLink to="/experience">Experience</NavLink>
       </li>
       <li className="lg:mx-2">
-        <NavLink to="/404">Contact Me</NavLink>
+        <NavLink to="/contact-me">Contact Me</NavLink>
       </li>
     </ul>
   );
