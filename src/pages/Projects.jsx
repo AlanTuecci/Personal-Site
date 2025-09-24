@@ -34,8 +34,8 @@ const Projects = () => {
           <motion.div
             ref={ref1}
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 25 }}
-            transition={{ duration: 1, delay: isInView1 ? 0.4 : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}
           >
             <ProjectCard
@@ -65,8 +65,8 @@ const Projects = () => {
           <motion.div
             ref={ref2}
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 25 }}
-            transition={{ duration: 1, delay: isInView1 ? 0.6 : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}
           >
             <ProjectCard
@@ -94,8 +94,8 @@ const Projects = () => {
           <motion.div
             ref={ref3}
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 25 }}
-            transition={{ duration: 1, delay: isInView1 ? 0.8 : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
             viewport={{ once: true }}
           >
             <ProjectCard
@@ -111,7 +111,7 @@ const Projects = () => {
               }
               pageLink={
                 <NavLink
-                  to="/projects/gallery/prospect-park"
+                  to="/projects/gallery/"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
@@ -123,8 +123,8 @@ const Projects = () => {
           <motion.div
             ref={ref4}
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 25 }}
-            transition={{ duration: 1, delay: isInView1 ? 1 : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.0 }}
             viewport={{ once: true }}
           >
             <ProjectCard
@@ -150,8 +150,8 @@ const Projects = () => {
           <motion.div
             ref={ref5}
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: isInView5 ? 1 : 0, y: isInView5 ? 0 : 25 }}
-            transition={{ duration: 1, delay: isInView4 ? 1.2 : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
             viewport={{ once: true }}
           >
             <ProjectCard

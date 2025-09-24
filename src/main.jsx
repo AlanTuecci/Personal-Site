@@ -11,10 +11,11 @@ import LessonFour from "./pages/CSCI-34000/LessonFour.jsx";
 import LessonFive from "./pages/CSCI-34000/LessonFive.jsx";
 import UnderConstruction from "./pages/UnderConstruction.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-// import Projects from "./pages/Projects.jsx";
 
 const Gallery = lazy(() => import("./pages/Gallery/Gallery.jsx"));
+const GalleryHome = lazy(() => import("./pages/Gallery/GalleryHome.jsx"));
 const Projects = lazy(() => import("./pages/Projects.jsx"));
+const SelectGallery = lazy(() => import("./pages/Gallery/SelectGallery.jsx"));
 
 const root = document.getElementById("root");
 
@@ -39,7 +40,9 @@ ReactDOM.createRoot(root).render(
           <Route path="/learn/lessonFour" element={<LessonFour />} />
           <Route path="/learn/lessonFive" element={<LessonFive />} />
           <Route path="/404" element={<UnderConstruction />} />
-          <Route path="/projects/gallery/:collection" element={<Gallery />} />
+          <Route path="/projects/gallery" element={<GalleryHome />} />
+          <Route path="/projects/gallery/:continent" element={<SelectGallery />} />
+          <Route path="/projects/gallery/:continent/:collection" element={<Gallery />} />
           <Route path="/*" element={<UnderConstruction />} />
         </Routes>
       </Suspense>
