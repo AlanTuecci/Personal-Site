@@ -31,28 +31,50 @@ const Intro = () => {
         >
           <SvgNightNature className="lg:w-[100%] w-[75%]" />
         </motion.div>
-        <div className="my-4 flex md:flex-row flex-col">
+      </div>
+      <div className="lg:w-[90%] w-[80%] mx-auto items-center justify-between my-4 flex flex-col md:flex-row">
+        <motion.div
+          className="lg:w-[75%]"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <ContinentCard
             urlSegment="/projects/gallery/eu"
             continentName="Europe"
             locationList="Locations: United Kingdom | Norway | Netherlands"
             iconImage={<SvgNature className="w-16 lg:w-24" />}
           />
-
+        </motion.div>
+        <motion.div
+          className="lg:w-[75%]"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
           <ContinentCard
             urlSegment="/projects/gallery/na"
             continentName="North America"
             locationList="Location: United States"
             iconImage={<SvgNature className="w-16 lg:w-24" />}
           />
-
+        </motion.div>
+        <motion.div
+          className="lg:w-[75%]"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
           <ContinentCard
             urlSegment="/projects/gallery/"
             continentName="Asia"
             locationList="Location: Japan [Coming Soon!]"
             iconImage={<SvgNature className="w-16 lg:w-24" />}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

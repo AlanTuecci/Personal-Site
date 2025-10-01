@@ -1,27 +1,13 @@
-import { Suspense, lazy, useRef } from "react";
+import { Suspense, useRef } from "react";
 import Header from "../components/Header/Header.jsx";
 import { SiReact, SiExpress, SiPostgresql, SiNginx, SiCloudflare, SiCloudinary, SiCplusplus } from "react-icons/si";
-import { NavLink } from "react-router";
-import { motion, useInView } from "framer-motion";
-
-// const Intro = lazy(() => import("../components/Projects/Intro.jsx"));
-// const ProjectCard = lazy(() => import("../components/Projects/ProjectCard.jsx"));
+import { motion } from "framer-motion";
 
 import Intro from "../components/Projects/Intro.jsx";
 import ProjectCard from "../components/Projects/ProjectCard.jsx";
 
 const Projects = () => {
   const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const ref5 = useRef(null);
-
-  const isInView1 = useInView(ref1, { once: true });
-  const isInView2 = useInView(ref2, { once: true });
-  const isInView3 = useInView(ref3, { once: true });
-  const isInView4 = useInView(ref4, { once: true });
-  const isInView5 = useInView(ref5, { once: true });
 
   return (
     <>
@@ -41,7 +27,7 @@ const Projects = () => {
             <ProjectCard
               name="Business Management Software Suite"
               description="The Business Management Software Suite is a web-based service that allows managers and employees to monitor inventory, back office safe and register cash levels, and time punches. Integrated email services allow for simple employee account creation, and administrative features allow for selective access control of actions on assets."
-              image="https://media.licdn.com/dms/image/v2/D4E2DAQFM8rlzOGTaKQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1736645039147?e=1757970000&v=beta&t=VH1scTHQcMMH9FnHHApHfQGzJApLYYUsOPvGflkTReI"
+              image="https://alantuecci.dev/gallery/screenshots/bms-suite.jpg"
               icons={
                 <>
                   <SiReact className="lg:text-4xl xl:text-5xl text-3xl mr-2" />
@@ -52,18 +38,20 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <NavLink
-                  to="https://alantuecci.dev/bms-suite/"
+                <a
+                  href="https://alantuecci.dev/bms-suite/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </NavLink>
+                </a>
               }
             />
           </motion.div>
 
           <motion.div
-            ref={ref2}
+            ref={ref1}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -72,7 +60,7 @@ const Projects = () => {
             <ProjectCard
               name="Operating Systems Web Course"
               description="The Operating Systems Web Course is a website that allows students enrolled in CUNY Hunter College's Operating Systems course to study and visualize concepts related to contemporary multiprocessing systems."
-              image="https://media.licdn.com/dms/image/v2/D4E2DAQFOwoOlZiaQKg/profile-treasury-image-shrink_800_800/B4EZfv9_1oH0Ac-/0/1752077697066?e=1757970000&v=beta&t=ZfydlQb_gymLPvdqc-d1oTXgXK8Hkop7Y5-Fosvk65A"
+              image="https://alantuecci.dev/gallery/screenshots/os-course.jpg"
               icons={
                 <>
                   <SiReact className="lg:text-4xl xl:text-5xl text-3xl mr-2" />
@@ -81,18 +69,20 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <NavLink
-                  to="/learn"
+                <a
+                  href="https://alantuecci.dev/learn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </NavLink>
+                </a>
               }
             />
           </motion.div>
 
           <motion.div
-            ref={ref3}
+            ref={ref1}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -101,27 +91,31 @@ const Projects = () => {
             <ProjectCard
               name="Gallery Application"
               description="The Gallery Application is a full-stack NodeJS application that allows beginner photographers to see images that I have taken in various locations along with the multiple pieces of data to help them recreate and understand how certain image effects are produced."
-              image="https://opengraph.githubassets.com/811a1d90882a97b87f23ac399994548ce4666ae7e786e65e225b477df24d3313/AlanTuecci/Gallery-Application"
+              image="https://alantuecci.dev/gallery/screenshots/gallery.jpg"
               icons={
                 <>
                   <SiReact className="lg:text-4xl xl:text-5xl text-3xl mr-2" />
                   <SiExpress className="lg:text-4xl xl:text-5xl text-3xl mx-2" />
+                  <SiNginx className="lg:text-4xl xl:text-5xl text-3xl mx-2" />
+                  <SiCloudflare className="lg:text-4xl xl:text-5xl text-3xl mx-2" />
                   <SiCloudinary className="lg:text-4xl xl:text-5xl text-3xl mx-2" />
                 </>
               }
               pageLink={
-                <NavLink
-                  to="/projects/gallery/"
+                <a
+                  href="https://alantuecci.dev/projects/gallery/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </NavLink>
+                </a>
               }
             />
           </motion.div>
 
           <motion.div
-            ref={ref4}
+            ref={ref1}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.0 }}
@@ -137,18 +131,20 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <NavLink
-                  to="https://github.com/AlanTuecci/Operating-System-Simulator"
+                <a
+                  href="https://github.com/AlanTuecci/Operating-System-Simulator"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </NavLink>
+                </a>
               }
             />
           </motion.div>
 
           <motion.div
-            ref={ref5}
+            ref={ref1}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
@@ -164,12 +160,14 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <NavLink
-                  to="https://github.com/AlanTuecci/Sorting-Algorithm-Performance-Profiler"
+                <a
+                  href="https://github.com/AlanTuecci/Sorting-Algorithm-Performance-Profiler"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </NavLink>
+                </a>
               }
             />
           </motion.div>
