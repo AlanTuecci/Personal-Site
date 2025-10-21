@@ -175,7 +175,7 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
       <h2 className="text-xl sm:text-2xl mb-6 text-center font-semibold">
         {name} on {data.date_value}
       </h2>
-      <div className="relative h-[250px] lg:h-[400px]">
+      <div className="relative h-[250px] md:h-[400px] lg:h-[400px]">
         <Line options={chartOptions} data={chartData} />
       </div>
     </div>

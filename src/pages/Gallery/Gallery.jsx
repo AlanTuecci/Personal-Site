@@ -172,6 +172,47 @@ const Gallery = () => {
             </div>
           </div>
         </main>
+        <div className="flex justify-center my-4 mx-4 lg:mx-10 mb-10">
+          <div className="w-full lg:w-[80%] my-4 rounded-lg shadow-xl flex flex-col">
+            <div className="lg:text-4xl xl:text-5xl text-2xl font-[googleSansMedium]">Image Information</div>
+            <div className="lg:text-lg xl:text-xl text-md my-8 md:flex justify-center">
+              <div className="md:mx-8 md:my-0 mb-4">
+                <div>
+                  🗓️Date Taken: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.date_taken}</span>
+                </div>
+                <div>
+                  ⏱️Time Taken: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.time_taken}</span>
+                </div>
+                <div>
+                  🌅Sunrise Time:{" "}
+                  <span className="font-[googleSansMedium]">
+                    {loading ? "loading..." : new Date(pastWeather.daily.sunrise[0]).toLocaleTimeString()}
+                  </span>
+                </div>
+                <div>
+                  🌇Sunset Time:{" "}
+                  <span className="font-[googleSansMedium]">
+                    {loading ? "loading..." : new Date(pastWeather.daily.sunset[0]).toLocaleTimeString()}
+                  </span>
+                </div>
+              </div>
+              <div className="md:mx-8 md:my-0 mt-4">
+                <div>
+                  ⏱️Exposure Time: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.exposure}</span>
+                </div>
+                <div>
+                  📷Aperture: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.aperture}</span>
+                </div>
+                <div>
+                  🔭Focal Length: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.focal_length}</span>
+                </div>
+                <div>
+                  💡ISO Rating: <span className="font-[googleSansMedium]">{imgData[currImgIdx]?.iso}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <Map location_plus_code={imgData[currImgIdx]?.plus_code} />
       </div>
     </>

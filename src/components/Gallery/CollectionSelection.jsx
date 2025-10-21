@@ -32,7 +32,7 @@ const CollectionSelection = () => {
     <div className="">
       <div className="lg:w-[90%] w-[80%] mx-auto lg:flex flex-wrap items-center justify-between">
         <motion.div
-          className="my-6 lg:w-[45%] lg:pr-8"
+          className="my-6 lg:w-[40%] lg:pr-8"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -45,7 +45,7 @@ const CollectionSelection = () => {
           </h2>
         </motion.div>
         <motion.div
-          className="my-6 lg:w-[55%] lg:min-h-96 grid lg:grid-cols-2 items-center justify-items-center"
+          className="my-6 lg:w-[60%] lg:min-h-96 grid lg:grid-cols-2 items-center justify-items-center"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}

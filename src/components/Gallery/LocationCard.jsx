@@ -7,7 +7,7 @@ const LocationCard = ({ displayName, urlSegment, iconImage }) => {
         <div className="flex flex-col items-center justify-center m-4">{iconImage}</div>
 
         <div className="w-full flex flex-col justify-center my-4 mr-4">
-          <div className="my-2 min-w-40 font-bold text-xl text-gray-800 ">Location: {displayName}</div>
+          <div className="my-2 w-52 font-bold text-xl text-gray-800 ">{displayName}</div>
         </div>
       </div>
     </NavLink>
