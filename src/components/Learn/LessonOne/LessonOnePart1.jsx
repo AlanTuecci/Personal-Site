@@ -61,7 +61,7 @@ const LessonOnePart1 = () => {
                 <span>Servers/Mainframes: Windows Server, Unix</span>
               </li>
               <li className="mt-2">
-                <span>Embedded Systems: TyniOS, VxWorld</span>
+                <span>Embedded Systems: TyniOS, VxWorks</span>
               </li>
               <li className="mt-2">
                 <span>Mobile Devices: Android, iOS/iPadOS</span>
