@@ -9,12 +9,14 @@ import LessonTwo from "./pages/CSCI-34000/LessonTwo.jsx";
 import LessonThree from "./pages/CSCI-34000/LessonThree.jsx";
 import LessonFour from "./pages/CSCI-34000/LessonFour.jsx";
 import LessonFive from "./pages/CSCI-34000/LessonFive.jsx";
+import ProjectData from "./pages/AboutProject/ProjectData.jsx";
 import UnderConstruction from "./pages/UnderConstruction.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const Gallery = lazy(() => import("./pages/Gallery/Gallery.jsx"));
 const GalleryHome = lazy(() => import("./pages/Gallery/GalleryHome.jsx"));
 const Projects = lazy(() => import("./pages/Projects.jsx"));
+const AboutProject = lazy(() => import("./pages/AboutProject/AboutProject.jsx"));
 const SelectGallery = lazy(() => import("./pages/Gallery/SelectGallery.jsx"));
 const Experience = lazy(() => import("./pages/Experience.jsx"));
 const Education = lazy(() => import("./pages/Education.jsx"));
@@ -36,6 +38,7 @@ ReactDOM.createRoot(root).render(
           <Route index element={<Home />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<AboutProject projectData={ProjectData} />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/education" element={<Education />} />
           <Route path="/learn/lessonOne" element={<LessonOne />} />

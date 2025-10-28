@@ -1,4 +1,5 @@
 import { Suspense, useRef } from "react";
+import { NavLink } from "react-router";
 import Header from "../components/Header/Header.jsx";
 import { SiReact, SiExpress, SiPostgresql, SiNginx, SiCloudflare, SiCloudinary, SiCplusplus } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -38,14 +39,12 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <a
-                  href="https://alantuecci.dev/bms-suite/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/projects/bms-suite"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </a>
+                </NavLink>
               }
             />
           </motion.div>
@@ -69,14 +68,12 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <a
-                  href="https://alantuecci.dev/learn"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/projects/os-course"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </a>
+                </NavLink>
               }
             />
           </motion.div>
@@ -102,14 +99,12 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <a
-                  href="https://alantuecci.dev/projects/gallery/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/projects/gallery-application/"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </a>
+                </NavLink>
               }
             />
           </motion.div>
@@ -131,14 +126,12 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <a
-                  href="https://github.com/AlanTuecci/Operating-System-Simulator"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/projects/os-simulator"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </a>
+                </NavLink>
               }
             />
           </motion.div>
@@ -152,7 +145,7 @@ const Projects = () => {
           >
             <ProjectCard
               name="Sorting Algorithm Performance Profiler"
-              description="The Sorting Algorithm Performance Profiler is a C++ application with a user-friendly command-line interface that allows users to run five different sorting algorithms across 9 different inputs ranging from 30,000 to 1,000,000 integers. By timing the execution of each algorithm for the selected inputs and displaying them to the user along with the algorithm’s Big-O complexity, users can better understand how an algorithm's Big-O complexity affects its execution time across different input sizes."
+              description="The Sorting Algorithm Performance Profiler is a C++ application with a user-friendly command-line interface that allows users to run five different sorting algorithms across 9 different inputs ranging from 30,000 to 1,000,000 integers. By timing the execution of each algorithm for the selected inputs and displaying them to the user along with the algorithm's Big-O complexity, users can better understand how an algorithm's Big-O complexity affects its execution time across different input sizes."
               image="https://opengraph.githubassets.com/8e883eb0c3b32b82d453eea2f087457210db3e50b0c25fed5e83c62d3fd8a698/AlanTuecci/Sorting-Algorithm-Performance-Profiler"
               icons={
                 <>
@@ -160,14 +153,12 @@ const Projects = () => {
                 </>
               }
               pageLink={
-                <a
-                  href="https://github.com/AlanTuecci/Sorting-Algorithm-Performance-Profiler"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/projects/algorithm-profiler"
                   className="w-full hover:bg-indigo-500 hover:text-white font-bold py-2 px-4 rounded-full border-slate-900 border-2 transition duration-300 ease-in-out"
                 >
                   Learn More
-                </a>
+                </NavLink>
               }
             />
           </motion.div>
