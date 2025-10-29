@@ -30,7 +30,7 @@ const AboutProject = ({ projectData }) => {
           <div className="flex xl:space-x-6 lg:space-x-4 space-x-2 my-6">
             <div className="flex items-center">{project.icons}</div>
           </div>
-          <div className="flex space-x-4 mb-8">
+          <div className="flex space-x-4">
             <a
               href={project.githubLink}
               target="_blank"
@@ -64,7 +64,32 @@ const AboutProject = ({ projectData }) => {
         </motion.div>
 
         {(project.image1 || project.image2 || project.image3) && (
-          <ImageGrid image1={project.image1} image2={project.image2} image3={project.image3} />
+          <div>
+            <motion.h1
+              className="my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]"
+              initial={{ opacity: 0, x: 25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              Project Screenshots
+            </motion.h1>
+            <ImageGrid image1={project.image1} image2={project.image2} image3={project.image3} />
+          </div>
+        )}
+
+        {project.description && (
+          <motion.div
+            initial={{ opacity: 0, x: 25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h1 className="my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]">
+              Project Description
+            </h1>
+            <h2 className="px-4 lg:px-8 lg:text-xl xl:text-2xl text-lg">{project.description}</h2>
+          </motion.div>
         )}
       </div>
     </>

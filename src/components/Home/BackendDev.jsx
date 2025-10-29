@@ -62,11 +62,11 @@ const BackendDev = () => {
           >
             <ul className="lg:text-2xl text-xl list-disc pl-5">
               <li className="mt-4">
-                <span>I create APIs and application backends using Express.JS running on Node.JS.</span>
+                <span>I create APIs and power application backends using Express.JS.</span>
               </li>
               <li className="mt-4">
                 <span>
-                  Backend servers are secured with JWT-based authentication, server fingerprint reduction, rate
+                  Backend servers are secured with authentication via JWTs, server fingerprint reduction, rate
                   limiting, input sanitation, and secure HTTP cookie transfer.
                 </span>
               </li>

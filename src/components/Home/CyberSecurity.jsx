@@ -71,9 +71,8 @@ const CyberSecurity = () => {
               </li>
               <li className="mt-4">
                 <span>
-                  Cloudflare Zone-level Web Application Firewall rules are used to inspect and block malicious requests
-                  before they reach my servers. In the last 30 days, over 5,000 malicious requests were blocked by the
-                  firewall.
+                  A mix of custom and preset Cloudflare Web Application Firewall rules are used to inspect and block
+                  automated and malicious requests before they reach my servers.
                 </span>
               </li>
             </ul>

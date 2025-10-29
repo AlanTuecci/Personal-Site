@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ImageGrid = ({ image1, image2, image3 }) => {
   return (
     <motion.div
-      className="max-w-full py-5 px-10 grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center"
+      className="max-w-full px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

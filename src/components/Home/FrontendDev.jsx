@@ -86,13 +86,10 @@ const FrontendDev = () => {
                 <span>I develop website frontends using React.JS and build them with Create-React-App or Vite.</span>
               </li>
               <li className="mt-4">
-                <span>Frontend state management is done with React-Redux.</span>
+                <span>Frontend state is managed with React-Redux or React Contexts.</span>
               </li>
               <li className="mt-4">
-                <span>Responsive frontend styles are applied using either Tailwind CSS or Vanilla CSS.</span>
-              </li>
-              <li className="mt-4">
-                <span>This website uses React.JS, Vite, and Tailwind CSS.</span>
+                <span>Clean, responsive frontend styles are created using TailwindCSS.</span>
               </li>
             </ul>
           </motion.div>

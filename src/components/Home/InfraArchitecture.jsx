@@ -64,13 +64,19 @@ const InfraArchitecture = () => {
           >
             <ul className="lg:text-2xl text-xl list-disc pl-5">
               <li className="mt-4">
-                <span>I securely deploy my projects using the Cloudflare Zero Trust platform and my own servers.</span>
+                <span>
+                  Every project I ever built is securely deployed on my own home servers behind a Cloudflare reverse
+                  proxy.
+                </span>
               </li>
               <li className="mt-4">
                 <span>Rapid data storage and access is done using an optimized PostgreSQL configuration.</span>
               </li>
               <li className="mt-4">
-                <span>High resolution images are distributed using the Cloudinary platform.</span>
+                <span>
+                  High resolution images are distributed using a Cloudflare CDN and are backed up on the Cloudinary
+                  platform.
+                </span>
               </li>
               <li className="mt-4">
                 <span>
