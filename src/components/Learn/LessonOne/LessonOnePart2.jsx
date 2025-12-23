@@ -68,7 +68,7 @@ const LessonOnePart2 = () => {
               <p className="py-2">
                 A syscall is not a request for higher permissions, it is a request for the operating system to do
                 something for the program. When a syscall happens, the CPU stops executing the program, switches to
-                kernel mode, then runs the OS code, and after that's done, it goes back to use mode and continues
+                kernel mode, then runs the OS code, and after that's done, it goes back to user mode and continues
                 executing the program code. This process takes some time (system calls are expensive). If something can
                 be done without syscalls, don't use syscalls.
               </p>

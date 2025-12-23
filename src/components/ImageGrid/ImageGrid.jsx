@@ -10,7 +10,7 @@ const ImageGrid = ({ image1, image2, image3 }) => {
       viewport={{ once: true }}
     >
       <motion.img
-        className="w-full h-auto object-cover rounded 2xl:rounded-lg"
+        className="w-full h-auto object-cover rounded 2xl:rounded-lg border-2"
         src={image1}
         alt=""
         initial={{ opacity: 0, x: -25 }}
@@ -19,7 +19,7 @@ const ImageGrid = ({ image1, image2, image3 }) => {
         viewport={{ once: true }}
       />
       <motion.img
-        className="w-full h-auto object-cover rounded 2xl:rounded-lg"
+        className="w-full h-auto object-cover rounded 2xl:rounded-lg border-2"
         src={image2}
         alt=""
         initial={{ opacity: 0, x: -25 }}
@@ -28,7 +28,7 @@ const ImageGrid = ({ image1, image2, image3 }) => {
         viewport={{ once: true }}
       />
       <motion.img
-        className="w-full h-auto object-cover rounded 2xl:rounded-lg"
+        className="w-full h-auto object-cover rounded 2xl:rounded-lg border-2"
         src={image3}
         alt=""
         initial={{ opacity: 0, x: -25 }}

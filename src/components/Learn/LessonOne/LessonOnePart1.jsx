@@ -18,7 +18,7 @@ const LessonOnePart1 = () => {
   return (
     <>
       <div className="lg:w-[90%] my-12 w-[80%] mx-auto lg:flex lg:flex-wrap lg:items-start lg:justify-center">
-        <div className="lg:w-[50%] lg:pr-4 xl:pr-8">
+        <div className="lg:w-[50%] lg:pr-4 2xl:pr-8">
           <motion.div
             className="mb-8"
             ref={ref2}
@@ -27,7 +27,7 @@ const LessonOnePart1 = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h1 className="lg:text-4xl xl:text-5xl text-3xl font-[googleSansMedium] text-center">
+            <h1 className="lg:text-4xl 2xl:text-5xl text-3xl font-[googleSansMedium] text-center">
               What is an Operating System?
             </h1>
           </motion.div>
@@ -39,7 +39,7 @@ const LessonOnePart1 = () => {
             transition={{ duration: 1, delay: isInView2 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="lg:text-2xl xl:text-3xl text-xl font-[googleSans] text-center">
+            <h2 className="lg:text-2xl 2xl:text-3xl text-xl font-[googleSans] text-center">
               An operating system is a program that manages hardware and provides other programs with an operating
               environment (an environment to run in).
             </h2>
@@ -52,8 +52,8 @@ const LessonOnePart1 = () => {
             transition={{ duration: 1, delay: isInView3 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="lg:text-2xl text-xl font-[googleSans]">These are some examples of operating systems:</h3>
-            <ul className="pl-5 lg:text-2xl text-xl list-disc">
+            <h3 className="lg:text-xl text-xl font-[googleSans]">These are some examples of operating systems:</h3>
+            <ul className="pl-5 lg:text-xl text-xl list-disc">
               <li className="mt-2">
                 <span>Laptop/Desktop: Windows, MacOS, Linux, ChromeOS</span>
               </li>
@@ -61,7 +61,7 @@ const LessonOnePart1 = () => {
                 <span>Servers/Mainframes: Windows Server, Unix</span>
               </li>
               <li className="mt-2">
-                <span>Embedded Systems: TyniOS, VxWorks</span>
+                <span>Embedded Systems: TinyOS, VxWorks</span>
               </li>
               <li className="mt-2">
                 <span>Mobile Devices: Android, iOS/iPadOS</span>
@@ -76,16 +76,16 @@ const LessonOnePart1 = () => {
             transition={{ duration: 1, delay: isInView4 ? 0.2 : 0 }}
             viewport={{ once: true }}
           >
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+            <p className="2xl:text-2xl text-xl font-[googleSans] py-2">
               App developers only need to develop for certain OSes, which means they don't need to worry about
               communication with unique hardware.
             </p>
-            <p className="lg:text-2xl text-xl font-[googleSans] py-2">
+            <p className="2xl:text-2xl text-xl font-[googleSans] py-2">
               Hardware interactions are handled by the Operating System.
             </p>
           </motion.div>
         </div>
-        <div className="lg:w-[50%] lg:pl-4 xl:pl-8">
+        <div className="lg:w-[50%] lg:pl-4 2xl:pl-8">
           <motion.div
             className="flex justify-center"
             ref={ref1}

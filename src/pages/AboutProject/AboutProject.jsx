@@ -45,7 +45,7 @@ const AboutProject = ({ projectData }) => {
                 href={project.pageLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors"
+                className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors"
               >
                 <FaExternalLinkAlt className="mr-2" />
                 Live Demo
@@ -66,7 +66,7 @@ const AboutProject = ({ projectData }) => {
         {(project.image1 || project.image2 || project.image3) && (
           <div>
             <motion.h1
-              className="my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]"
+              className="xl:my-12 my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]"
               initial={{ opacity: 0, x: 25 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
@@ -85,10 +85,10 @@ const AboutProject = ({ projectData }) => {
             transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]">
+            <h1 className="xl:my-12 my-8 text-center lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]">
               Project Description
             </h1>
-            <h2 className="px-4 lg:px-8 lg:text-xl xl:text-2xl text-lg">{project.description}</h2>
+            <h2 className="px-4 lg:px-16 lg:text-xl xl:text-2xl text-lg">{project.description}</h2>
           </motion.div>
         )}
       </div>

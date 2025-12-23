@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import textStyles from "../../style-strings/text-sizes";
 
 const WhatIDo = () => {
   const ref = useRef(null);
@@ -7,14 +8,14 @@ const WhatIDo = () => {
 
   return (
     <motion.div
-      className="flex justify-center xl:mb-16 mb-12"
+      className="flex justify-center 2xl:mt-16 my-12"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <h1 className="lg:text-5xl xl:text-6xl text-4xl font-[googleSansBold]">What I do</h1>
+      <h1 className={textStyles.header}>My Skillset</h1>
     </motion.div>
   );
 };

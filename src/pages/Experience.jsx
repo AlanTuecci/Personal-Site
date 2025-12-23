@@ -4,8 +4,9 @@ import ExperienceCard from "../components/Experience/ExperienceCard.jsx";
 
 import GSOE_logo from "../assets/logos/GSOE_logo.jpg";
 import Hunter_logo from "../assets/logos/Hunter_logo.webp";
-import McDonaldsLogo from "../assets/logos/McDonalds_logo.png";
+import McDonaldsLogo from "../assets/logos/McDonalds_logo.webp";
 import SvgStudy from "../assets/SvgStudy.jsx";
+import textStyles from "../style-strings/text-sizes.js";
 
 const experienceData = [
   {
@@ -67,9 +68,9 @@ const Experience = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h1 className="lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]">Work Experience</h1>
+          <h1 className={textStyles.header}>Work Experience</h1>
           <br />
-          <h2 className="lg:text-xl xl:text-2xl text-lg font-[googleSansMedium]">
+          <h2 className={textStyles.mediumBoldText}>
             This is a detailed look at my professional experience, highlighting a blend of software engineering, IT
             management, and mentorship. From developing scalable backend APIs and optimizing frontend performance to
             ensuring the reliability of business-critical systems, this timeline showcases my key contributions and
@@ -86,20 +87,13 @@ const Experience = () => {
           <SvgStudy className="lg:w-[100%] w-[75%]" />
         </motion.div>
       </div>
-      <div className="p-4 sm:p-6 lg:p-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="rounded-lg shadow-md p-6">
-            <div className="relative border-l-2 border-gray-200  ml-4">
-              <div className="space-y-12">
-                {experienceData.map((exp, index) => (
-                  <div key={index} className="relative pl-10">
-                    <span className="absolute -left-[13px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-200 ring-8 ring-white " />
-                    <ExperienceCard experience={exp} />
-                  </div>
-                ))}
-              </div>
+      <div className="w-[80%] mt-12 mb-8 mx-auto flex justify-center">
+        <div className="flex flex-col">
+          {experienceData.map((exp, index) => (
+            <div key={index} className="w-full">
+              <ExperienceCard experience={exp} isLast={index === experienceData.length - 1} />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

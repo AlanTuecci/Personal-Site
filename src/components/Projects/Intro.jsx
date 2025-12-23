@@ -1,7 +1,8 @@
 import { NavLink } from "react-router";
 import { motion } from "framer-motion";
 import { PiLinkedinLogoLight, PiGithubLogoLight } from "react-icons/pi";
-import SvgProjects from "../../assets/SvgProjects";
+import SvgThinking from "../../assets/SvgThinking";
+import textStyles from "../../style-strings/text-sizes";
 
 const Intro = () => {
   return (
@@ -14,9 +15,9 @@ const Intro = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h1 className="lg:text-5xl xl:text-6xl text-4xl font-[googleSansBold]">My Portfolio</h1>
+          <h1 className={textStyles.header}>My Portfolio</h1>
           <br />
-          <h2 className="lg:text-3xl xl:text-4xl text-xl font-[googleSansMedium]">
+          <h2 className={textStyles.mediumBoldText}>
             This is my complete collection of software projects that I built over the years, each designed to solve
             real-world problems and showcase my skills.
           </h2>
@@ -28,10 +29,10 @@ const Intro = () => {
             viewport={{ once: true }}
           >
             <NavLink to="https://github.com/AlanTuecci">
-              <PiGithubLogoLight className="lg:text-5xl xl:text-6xl text-4xl" />
+              <PiGithubLogoLight className={textStyles.header} />
             </NavLink>
             <NavLink to="https://www.linkedin.com/in/alan-tuecci/">
-              <PiLinkedinLogoLight className="lg:text-5xl xl:text-6xl text-4xl" />
+              <PiLinkedinLogoLight className={textStyles.header} />
             </NavLink>
           </motion.div>
         </motion.div>
@@ -42,7 +43,7 @@ const Intro = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <SvgProjects className="lg:w-[100%] w-[75%]" />
+          <SvgThinking className="lg:w-[100%] w-[75%]" />
         </motion.div>
       </div>
     </div>
