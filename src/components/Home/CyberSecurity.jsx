@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { motion, useInView } from "framer-motion";
 import { SiCloudflare, SiGithubactions } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
-import SvgSecurityOn from "../../assets/SvgSecurityOn";
+import SvgTwoFactorAuth from "../../assets/SvgTwoFactorAuth";
 import textStyles from "../../style-strings/text-sizes";
 
 const CyberSecurity = () => {
@@ -91,7 +91,7 @@ const CyberSecurity = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <SvgSecurityOn className="lg:w-[100%] w-[75%]" />
+            <SvgTwoFactorAuth className="lg:w-[100%] w-[75%]" />
           </motion.div>
         </div>
       </div>
