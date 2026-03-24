@@ -20,7 +20,10 @@ const galleries = {
     ["Geiranger, Norway", "/projects/gallery/eu/geiranger"],
     ["Alesund, Norway", "/projects/gallery/eu/alesund"],
   ],
-  as: [["Tokyo, Japan", "/projects/gallery/as/tokyo"]],
+  as: [
+    ["Tokyo, Japan", "/projects/gallery/as/tokyo"],
+    ["Yamanashi, Japan", "/projects/gallery/as/yamanashi"],
+  ],
 };
 
 const CollectionSelection = () => {

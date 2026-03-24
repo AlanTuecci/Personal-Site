@@ -69,9 +69,9 @@ const Intro = () => {
           viewport={{ once: true }}
         >
           <ContinentCard
-            urlSegment="/projects/gallery/"
+            urlSegment="/projects/gallery/as"
             continentName="Asia"
-            locationList="Location: Japan [Coming Soon!]"
+            locationList="Location: Japan"
             iconImage={<SvgNature className="w-16 lg:w-24" />}
           />
         </motion.div>
