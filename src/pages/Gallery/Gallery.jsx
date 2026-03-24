@@ -18,7 +18,10 @@ const Gallery = () => {
   const [timeTaken, setTimeTaken] = useState("00:00:00");
   const [dateTaken, setDateTaken] = useState(date.toDateString());
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+
+  const [isWeatherLoading, setIsWeatherLoading] = useState(true);
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
   const [imgData, setImgData] = useState([]);
   const [locationName, setLocationName] = useState("Loading...");
   const [currImgIdx, setCurrImgIdx] = useState(0);
@@ -46,7 +49,7 @@ const Gallery = () => {
     if (imgData.length === 0) return;
 
     const fetchWeatherData = async () => {
-      setLoading(true);
+      setIsWeatherLoading(true);
       try {
         const currImg = imgData[currImgIdx];
         const lat = encodeURIComponent(currImg.latitude);
@@ -66,7 +69,7 @@ const Gallery = () => {
         console.error(`Error fetching weather data: ${error}`);
         setError("Failed to load weather data.");
       } finally {
-        setLoading(false);
+        setIsWeatherLoading(false);
       }
     };
 
@@ -75,12 +78,14 @@ const Gallery = () => {
 
   const handlePrevClick = () => {
     if (imgData.length >= 1) {
+      setIsImageLoading(true);
       setCurrImgIdx((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : imgData.length - 1));
     }
   };
 
   const handleNextClick = () => {
     if (imgData.length >= 1) {
+      setIsImageLoading(true);
       setCurrImgIdx((prevIndex) => (prevIndex < imgData.length - 1 ? prevIndex + 1 : 0));
     }
   };
@@ -137,21 +142,46 @@ const Gallery = () => {
         <div className="flex flex-col lg:flex-row gap-8 mb-8">
           <div className="w-full lg:w-3/5">
             <div className="bg-white p-2 rounded-2xl shadow-sm border border-gray-100 relative group overflow-hidden h-[50vh] lg:h-[70vh] flex items-center justify-center">
-              {loading && <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-xl z-10" />}
+              {isImageLoading && imgData.length > 0 && (
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <svg
+                    className="animate-spin h-8 w-8 text-blue-500/40"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                </div>
+              )}
 
               <AnimatePresence mode="wait">
                 {imgData.length > 0 && (
                   <motion.img
                     key={currImgIdx}
                     src={imgData[currImgIdx]?.url}
+                    onLoad={() => setIsImageLoading(false)}
                     onError={addImageFallback}
                     alt={`Capture on ${imgData[currImgIdx]?.date}`}
-                    className="w-full h-full object-contain rounded-xl z-0 cursor-zoom-in"
+                    // image background is now white
+                    className="w-full h-full object-contain rounded-xl cursor-zoom-in relative z-10 bg-white"
                     onClick={() => setIsModalOpen(true)}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.3 }}
                   />
                 )}
               </AnimatePresence>
@@ -160,7 +190,7 @@ const Gallery = () => {
                 <>
                   <button
                     onClick={handlePrevClick}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 z-20"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/20 text-black p-3 rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 z-20"
                     aria-label="Previous image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,7 +199,7 @@ const Gallery = () => {
                   </button>
                   <button
                     onClick={handleNextClick}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 z-20"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/20 text-black p-3 rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 z-20"
                     aria-label="Next image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +279,7 @@ const Gallery = () => {
               <ExifItem
                 label={`Sunrise (${timeframe === "historical" ? "Historical" : "Today"})`}
                 value={
-                  loading || !activeWeather
+                  isWeatherLoading || !activeWeather
                     ? "..."
                     : new Date(activeWeather.daily.sunrise[0]).toLocaleTimeString([], {
                         hour: "2-digit",
@@ -260,7 +290,7 @@ const Gallery = () => {
               <ExifItem
                 label={`Sunset (${timeframe === "historical" ? "Historical" : "Today"})`}
                 value={
-                  loading || !activeWeather
+                  isWeatherLoading || !activeWeather
                     ? "..."
                     : new Date(activeWeather.daily.sunset[0]).toLocaleTimeString([], {
                         hour: "2-digit",
