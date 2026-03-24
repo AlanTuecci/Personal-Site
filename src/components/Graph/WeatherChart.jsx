@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
   TimeScale,
+  Filler,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
 import annotationPlugin from "chartjs-plugin-annotation";
@@ -23,19 +24,18 @@ ChartJS.register(
   Tooltip,
   Legend,
   TimeScale,
-  annotationPlugin
+  Filler,
+  annotationPlugin,
 );
-
-function capitalizeFirstLetter(str) {
-  if (!str) return "";
-  return `${str[0].toUpperCase()}${str.substring(1)}`;
-}
 
 const WeatherChart = ({ cityName, weatherData, data }) => {
   if (!weatherData || !weatherData.hourly || !data || !data.dataKey) {
     return (
-      <div className="bg-slate-50 rounded-xl shadow-xl p-4 flex items-center justify-center h-[400px]">
-        <p>Weather data is unavailable or incomplete.</p>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="animate-pulse flex flex-col items-center">
+          <div className="h-4 w-32 bg-gray-200 rounded mb-4"></div>
+          <div className="h-32 w-64 bg-gray-100 rounded"></div>
+        </div>
       </div>
     );
   }
@@ -45,13 +45,13 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
 
   if (data.dataKey === "temperature_2m") {
     name = "Temperature";
-    yAxisTitle = "Temperature (°C)";
+    yAxisTitle = "°C";
   } else if (data.dataKey === "precipitation") {
     name = "Precipitation";
-    yAxisTitle = "Precipitation (mm)";
+    yAxisTitle = "mm";
   } else if (data.dataKey === "cloud_cover") {
     name = "Cloud Cover";
-    yAxisTitle = "Cloud Cover (%)";
+    yAxisTitle = "%";
   }
 
   const chartPoints = weatherData.hourly.time.map((t, i) => ({
@@ -66,11 +66,13 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
       {
         label: name,
         data: chartPoints,
-        borderColor: "#0891B2",
-        backgroundColor: "rgba(14, 165, 233, 0.1)",
-        pointRadius: 2,
+        borderColor: "#3B82F6",
+        backgroundColor: "rgba(59, 130, 246, 0.1)",
+        pointRadius: 0,
         pointHoverRadius: 6,
-        borderWidth: 2,
+        borderWidth: 3,
+        tension: 0.4,
+        fill: true,
       },
     ],
   };
@@ -78,7 +80,6 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-
     interaction: {
       mode: "index",
       intersect: false,
@@ -88,61 +89,42 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
         type: "time",
         time: {
           unit: "hour",
-          displayFormats: {
-            hour: "HH:mm",
-          },
-          tooltipFormat: "MMM d, HH:mm",
+          displayFormats: { hour: "HH:mm" },
         },
-        adapters: {
-          date: {
-            locale: enUS,
-          },
-        },
-        grid: {
-          color: "#E2E8F0",
-        },
+        adapters: { date: { locale: enUS } },
+        grid: { display: false },
         ticks: {
-          color: "#475569",
-        },
-        title: {
-          display: true,
-          text: "Time",
-          color: "#475569",
+          color: "#94A3B8",
+          font: { family: "system-ui, sans-serif" },
         },
       },
       y: {
         beginAtZero: true,
         grid: {
-          color: "#E2E8F0",
+          color: "#F1F5F9",
+          borderDash: [5, 5],
         },
         ticks: {
-          color: "#475569",
+          color: "#94A3B8",
+          font: { family: "system-ui, sans-serif" },
         },
         title: {
           display: true,
           text: yAxisTitle,
-          color: "#475569",
+          color: "#94A3B8",
+          font: { weight: "bold" },
         },
       },
     },
     plugins: {
-      legend: {
-        position: "bottom",
-        labels: {
-          color: "#1E293B",
-          padding: 20,
-          font: {
-            size: 14,
-          },
-        },
-      },
+      legend: { display: false },
       tooltip: {
-        backgroundColor: "#1E293B",
+        backgroundColor: "#0F172A",
         titleColor: "#F8FAFC",
         bodyColor: "#F8FAFC",
-        borderColor: "#334155",
-        borderWidth: 1,
-        padding: 10,
+        padding: 12,
+        cornerRadius: 8,
+        displayColors: false,
       },
       annotation: {
         annotations: {
@@ -150,19 +132,17 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
             type: "line",
             xMin: referenceLineTime,
             xMax: referenceLineTime,
-            borderColor: "red",
+            borderColor: "#EF4444",
             borderWidth: 2,
-            borderDash: [6, 6],
+            borderDash: [4, 4],
             label: {
-              content: data.time_value,
+              content: `📸 ${data.time_value}`,
               enabled: true,
               position: "start",
-              backgroundColor: "rgba(0,0,0,0.0)",
-              color: "red",
-              font: {
-                size: 12,
-                weight: "bold",
-              },
+              backgroundColor: "#EF4444",
+              color: "white",
+              borderRadius: 4,
+              font: { size: 11, weight: "bold", family: "system-ui, sans-serif" },
             },
           },
         },
@@ -171,13 +151,8 @@ const WeatherChart = ({ cityName, weatherData, data }) => {
   };
 
   return (
-    <div>
-      <h2 className="text-xl sm:text-2xl mb-6 text-center font-semibold">
-        {name} on {data.date_value}
-      </h2>
-      <div className="relative h-[250px] md:h-[400px] lg:h-[400px]">
-        <Line options={chartOptions} data={chartData} />
-      </div>
+    <div className="absolute inset-0 pb-4">
+      <Line options={chartOptions} data={chartData} />
     </div>
   );
 };

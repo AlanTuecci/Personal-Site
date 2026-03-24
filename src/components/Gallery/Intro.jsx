@@ -1,82 +1,109 @@
 import { motion } from "framer-motion";
-import SvgNature from "../../assets/SvgNature";
-import SvgNightNature from "../../assets/SvgNightNature";
-import ContinentCard from "./ContinentCard";
+import { NavLink } from "react-router";
+
+const continents = [
+  {
+    id: "na",
+    name: "North America",
+    locationsList: "United States (New York)",
+    path: "/projects/gallery/na",
+    coverImage: "https://alantuecci.dev/gallery/dtx9bywff6wccgs4t1jr.jpg",
+  },
+  {
+    id: "eu",
+    name: "Europe",
+    locationsList: "United Kingdom | Norway | Netherlands",
+    path: "/projects/gallery/eu",
+    coverImage: "https://alantuecci.dev/gallery/mkz8gifvcq4uvjezre9m.jpg",
+  },
+  {
+    id: "as",
+    name: "Asia",
+    locationsList: "Japan",
+    path: "/projects/gallery/as",
+    coverImage: "https://alantuecci.dev/gallery/_DSC8293.jpg",
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
 
 const Intro = () => {
   return (
-    <div className="">
-      <div className="lg:w-[90%] mt-10 w-[80%] mx-auto lg:flex flex-wrap items-center justify-between">
+    <div className="bg-gray-50 my-4">
+      <div className="w-[90%] max-w-7xl mx-auto">
         <motion.div
-          className="my-6 lg:w-[50%] lg:pr-14"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          className="max-w-3xl mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <h1 className="lg:text-4xl xl:text-5xl text-3xl font-[googleSansBold]">Photo Gallery</h1>
-          <br />
-          <h2 className="lg:text-xl xl:text-2xl text-lg font-[googleSansMedium]">
+          <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">Photo Gallery</h1>
+          <p className="text-lg lg:text-xl text-gray-600 font-medium leading-relaxed">
             This is a collection of photos I took around the world over the years. For each photo, I show both the
             precise location where the shot was taken and the relevant weather data from the day that the photo was
             taken. The goal is to provide newer photographers the resources they need to reproduce certain shots.
-          </h2>
+          </p>
         </motion.div>
+
         <motion.div
-          className="my-6 lg:w-[50%] flex justify-center"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
         >
-          <SvgNightNature className="lg:w-[100%] w-[75%]" />
-        </motion.div>
-      </div>
-      <div className="lg:w-[90%] w-[80%] mx-auto items-center justify-between my-4 flex flex-col md:flex-row">
-        <motion.div
-          className="lg:w-[75%]"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <ContinentCard
-            urlSegment="/projects/gallery/eu"
-            continentName="Europe"
-            locationList="Locations: United Kingdom | Norway | Netherlands"
-            iconImage={<SvgNature className="w-16 lg:w-24" />}
-          />
-        </motion.div>
-        <motion.div
-          className="lg:w-[75%]"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <ContinentCard
-            urlSegment="/projects/gallery/na"
-            continentName="North America"
-            locationList="Location: United States"
-            iconImage={<SvgNature className="w-16 lg:w-24" />}
-          />
-        </motion.div>
-        <motion.div
-          className="lg:w-[75%]"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <ContinentCard
-            urlSegment="/projects/gallery/as"
-            continentName="Asia"
-            locationList="Location: Japan"
-            iconImage={<SvgNature className="w-16 lg:w-24" />}
-          />
+          {continents.map((continent) => (
+            <ContinentCard
+              key={continent.id}
+              name={continent.name}
+              locationsList={continent.locationsList}
+              path={continent.path}
+              coverImage={continent.coverImage}
+            />
+          ))}
         </motion.div>
       </div>
     </div>
+  );
+};
+
+const ContinentCard = ({ name, locationsList, path, coverImage }) => {
+  return (
+    <motion.div variants={itemVariants} className="h-full">
+      <NavLink to={path} className="group block h-full">
+        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg transition-shadow duration-500 group-hover:shadow-2xl bg-gray-200">
+          <img
+            src={coverImage}
+            alt={name}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
+
+          <div className="absolute inset-0 flex flex-col justify-end p-8">
+            <h2 className="text-white font-bold text-3xl mb-2 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+              {name}
+            </h2>
+
+            <p className="text-gray-300 text-sm font-medium opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+              {locationsList}
+            </p>
+
+            <div className="h-1 w-12 bg-blue-500 mt-4 rounded-full transition-all duration-500 group-hover:w-full" />
+          </div>
+        </div>
+      </NavLink>
+    </motion.div>
   );
 };
 
