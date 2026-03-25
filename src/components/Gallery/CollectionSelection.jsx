@@ -1,5 +1,6 @@
 import { useParams, NavLink, Link } from "react-router";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const galleries = {
   na: [
@@ -7,36 +8,50 @@ const galleries = {
       name: "Brooklyn Army Terminal, New York",
       path: "/projects/gallery/na/brooklyn-army-terminal",
       coverImage: "https://alantuecci.dev/gallery/bmgkyvlkff5bpdcj7ova.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274539/WebDev-Assignment-1/photo-new-york/brooklyn-army-terminal/bmgkyvlkff5bpdcj7ova.jpg",
     },
     {
       name: "Central Park, New York",
       path: "/projects/gallery/na/central-park",
       coverImage: "https://alantuecci.dev/gallery/lookwcndf8emnksw4vgc.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274607/WebDev-Assignment-1/photo-new-york/central-park/lookwcndf8emnksw4vgc.jpg",
     },
     {
       name: "Dumbo Carousel, New York",
       path: "/projects/gallery/na/dumbo-carousel",
       coverImage: "https://alantuecci.dev/gallery/sdmjdhmdtquuwwjziwrx.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274623/WebDev-Assignment-1/photo-new-york/dumbo-carousel/sdmjdhmdtquuwwjziwrx.jpg",
     },
     {
       name: "Hunter College, New York",
       path: "/projects/gallery/na/hunter-college",
       coverImage: "https://alantuecci.dev/gallery/rfi4nfy5fcxniiyicqlt.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274717/WebDev-Assignment-1/photo-new-york/hunter-college/rfi4nfy5fcxniiyicqlt.jpg",
     },
     {
       name: "Industry City, New York",
       path: "/projects/gallery/na/industry-city",
       coverImage: "https://alantuecci.dev/gallery/qiiyz2dmnqoxlsxf9epa.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274669/WebDev-Assignment-1/photo-new-york/industry-city/qiiyz2dmnqoxlsxf9epa.jpg",
     },
     {
       name: "Pier 17, New York",
       path: "/projects/gallery/na/pier-17",
       coverImage: "https://alantuecci.dev/gallery/dtx9bywff6wccgs4t1jr.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274801/WebDev-Assignment-1/photo-new-york/pier-17-brooklyn-bridge/dtx9bywff6wccgs4t1jr.jpg",
     },
     {
       name: "Prospect Park, New York",
       path: "/projects/gallery/na/prospect-park",
       coverImage: "https://alantuecci.dev/gallery/iylxlktn8yknnqdrugim.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274760/WebDev-Assignment-1/photo-new-york/prospect-park/iylxlktn8yknnqdrugim.jpg",
     },
   ],
   eu: [
@@ -44,26 +59,36 @@ const galleries = {
       name: "London, United Kingdom",
       path: "/projects/gallery/eu/london",
       coverImage: "https://alantuecci.dev/gallery/n6ftd1deni124wrcocaz.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274519/WebDev-Assignment-1/photo-london/n6ftd1deni124wrcocaz.jpg",
     },
     {
       name: "Amsterdam, Netherlands",
       path: "/projects/gallery/eu/amsterdam",
       coverImage: "https://alantuecci.dev/gallery/rzjslcw1gznpebyhgxgv.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274488/WebDev-Assignment-1/photo-amsterdam/rzjslcw1gznpebyhgxgv.jpg",
     },
     {
       name: "Bergen, Norway",
       path: "/projects/gallery/eu/fjellstrekninger",
       coverImage: "https://alantuecci.dev/gallery/x7pqkuy9ug08brxwe7mj.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274264/WebDev-Assignment-1/photo-norway/fjellstrekninger/x7pqkuy9ug08brxwe7mj.jpg",
     },
     {
       name: "Geiranger, Norway",
       path: "/projects/gallery/eu/geiranger",
       coverImage: "https://alantuecci.dev/gallery/mkz8gifvcq4uvjezre9m.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274475/WebDev-Assignment-1/photo-norway/geiranger/mkz8gifvcq4uvjezre9m.jpg",
     },
     {
       name: "Alesund, Norway",
       path: "/projects/gallery/eu/alesund",
       coverImage: "https://alantuecci.dev/gallery/zlzyagj6jp7tjg3od6rd.jpg",
+      backupImage:
+        "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274198/WebDev-Assignment-1/photo-norway/alesund/zlzyagj6jp7tjg3od6rd.jpg",
     },
   ],
   as: [
@@ -71,11 +96,13 @@ const galleries = {
       name: "Tokyo, Japan",
       path: "/projects/gallery/as/tokyo",
       coverImage: "https://alantuecci.dev/gallery/_DSC8196.jpg",
+      backupImage: "https://res.cloudinary.com/dgfazyq2e/image/upload/v1774381728/_DSC8196_ib0k9k.jpg",
     },
     {
       name: "Yamanashi, Japan",
       path: "/projects/gallery/as/yamanashi",
       coverImage: "https://alantuecci.dev/gallery/_DSC8293.jpg",
+      backupImage: "https://res.cloudinary.com/dgfazyq2e/image/upload/v1774381734/_DSC8293_icwzni.jpg",
     },
   ],
 };
@@ -144,7 +171,13 @@ const CollectionSelection = () => {
               animate="show"
             >
               {locations.map((loc) => (
-                <LocationCard key={loc.path} name={loc.name} path={loc.path} coverImage={loc.coverImage} />
+                <LocationCard
+                  key={loc.path}
+                  name={loc.name}
+                  path={loc.path}
+                  coverImage={loc.coverImage}
+                  backupImage={loc.backupImage}
+                />
               ))}
             </motion.div>
           ) : (
@@ -159,14 +192,25 @@ const CollectionSelection = () => {
   );
 };
 
-const LocationCard = ({ name, path, coverImage }) => {
+const LocationCard = ({ name, path, coverImage, backupImage }) => {
+  const [imgSrc, setImgSrc] = useState(coverImage);
+
+  const handleError = () => {
+    if (imgSrc !== backupImage) {
+      setImgSrc(backupImage);
+    }
+  };
+
   return (
     <motion.div variants={itemVariants} className="h-full">
       <NavLink to={path} className="group block h-full">
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl bg-gray-200">
           <img
-            src={coverImage}
+            src={imgSrc}
+            onError={handleError}
             alt={name}
+            decoding="async"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
           />
 

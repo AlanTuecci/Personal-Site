@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { NavLink } from "react-router";
 
 const continents = [
@@ -8,6 +9,8 @@ const continents = [
     locationsList: "United States (New York)",
     path: "/projects/gallery/na",
     coverImage: "https://alantuecci.dev/gallery/dtx9bywff6wccgs4t1jr.jpg",
+    backupImage:
+      "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274801/WebDev-Assignment-1/photo-new-york/pier-17-brooklyn-bridge/dtx9bywff6wccgs4t1jr.jpg",
   },
   {
     id: "eu",
@@ -15,6 +18,8 @@ const continents = [
     locationsList: "United Kingdom | Norway | Netherlands",
     path: "/projects/gallery/eu",
     coverImage: "https://alantuecci.dev/gallery/mkz8gifvcq4uvjezre9m.jpg",
+    backupImage:
+      "https://res.cloudinary.com/dgfazyq2e/image/upload/v1700274475/WebDev-Assignment-1/photo-norway/geiranger/mkz8gifvcq4uvjezre9m.jpg",
   },
   {
     id: "as",
@@ -22,6 +27,7 @@ const continents = [
     locationsList: "Japan",
     path: "/projects/gallery/as",
     coverImage: "https://alantuecci.dev/gallery/_DSC8293.jpg",
+    backupImage: "https://res.cloudinary.com/dgfazyq2e/image/upload/v1774381734/_DSC8293_icwzni.jpg",
   },
 ];
 
@@ -69,6 +75,7 @@ const Intro = () => {
               locationsList={continent.locationsList}
               path={continent.path}
               coverImage={continent.coverImage}
+              backupImage={continent.backupImage}
             />
           ))}
         </motion.div>
@@ -77,14 +84,25 @@ const Intro = () => {
   );
 };
 
-const ContinentCard = ({ name, locationsList, path, coverImage }) => {
+const ContinentCard = ({ name, locationsList, path, coverImage, backupImage }) => {
+  const [imgSrc, setImgSrc] = useState(coverImage);
+
+  const handleError = () => {
+    if (imgSrc !== backupImage) {
+      setImgSrc(backupImage);
+    }
+  };
+
   return (
     <motion.div variants={itemVariants} className="h-full">
       <NavLink to={path} className="group block h-full">
         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg transition-shadow duration-500 group-hover:shadow-2xl bg-gray-200">
           <img
-            src={coverImage}
+            src={imgSrc}
             alt={name}
+            onError={handleError}
+            decoding="async"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
           />
 

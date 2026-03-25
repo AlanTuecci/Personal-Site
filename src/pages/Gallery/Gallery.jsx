@@ -172,10 +172,11 @@ const Gallery = () => {
                   <motion.img
                     key={currImgIdx}
                     src={imgData[currImgIdx]?.url}
+                    decoding="async"
+                    loading="lazy"
                     onLoad={() => setIsImageLoading(false)}
                     onError={addImageFallback}
                     alt={`Capture on ${imgData[currImgIdx]?.date}`}
-                    // image background is now white
                     className="w-full h-full object-contain rounded-xl cursor-zoom-in relative z-10 bg-white"
                     onClick={() => setIsModalOpen(true)}
                     initial={{ opacity: 0 }}
@@ -334,6 +335,8 @@ const Gallery = () => {
             <motion.img
               key={currImgIdx}
               src={imgData[currImgIdx]?.url}
+              decoding="async"
+              loading="lazy"
               alt="Enlarged view"
               className="max-w-full max-h-full object-contain cursor-default"
               initial={{ scale: 0.9, opacity: 0 }}
